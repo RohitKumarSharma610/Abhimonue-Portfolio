@@ -1,0 +1,501 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.portfolio-app {
+  --page: #101411;
+  --surface: #171d18;
+  --surface-raised: #1d251f;
+  --ink: #f4f2e9;
+  --muted: #b7bcb3;
+  --subtle: #8c958b;
+  --line: rgb(231 238 222 / 12%);
+  --glass: rgb(241 244 232 / 5%);
+  --accent: #79b9ff;
+  --accent-strong: #b7d7ff;
+  --button-ink: #162018;
+  --glow: rgb(90 150 255 / 16%);
+  color: var(--ink);
+  min-height: 100vh;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+.portfolio-app.dark-mode {
+  color-scheme: dark;
+}
+
+.portfolio-app.light-mode {
+  --page: #f7f9fe;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --ink: #0f172a;
+  --muted: #334155;
+  --subtle: #64748b;
+  --line: rgb(37 99 235 / 18%);
+  --glass: rgb(255 255 255 / 82%);
+  --accent: #1d4ed8;
+  --accent-strong: #1d4ed8;
+  --button-ink: #ffffff;
+  --glow: rgb(37 99 235 / 16%);
+  color-scheme: light;
+}
+
+.portfolio-app.light-mode {
+  background: var(--page) !important;
+}
+
+.portfolio-app.light-mode .hero-section {
+  background:
+    radial-gradient(circle at 78% 42%, rgb(37 99 235 / 12%), transparent 27%),
+    radial-gradient(circle at 12% 78%, rgb(14 165 233 / 7%), transparent 24%),
+    linear-gradient(135deg, #f8fafc 0%, #edf3ff 100%);
+}
+
+.portfolio-app.light-mode .hero-grid {
+  opacity: 0.42;
+  background-image:
+    linear-gradient(rgb(37 99 235 / 7%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(37 99 235 / 7%) 1px, transparent 1px);
+}
+
+.portfolio-app.light-mode .availability-pill,
+.portfolio-app.light-mode .tech-pill,
+.portfolio-app.light-mode .skill-pill {
+  background: rgb(255 255 255 / 78%) !important;
+  color: #334155 !important;
+  box-shadow: 0 8px 24px rgb(37 99 235 / 7%);
+}
+
+.portfolio-app.light-mode .text-white,
+.portfolio-app.light-mode.text-white {
+  color: #0f172a !important;
+}
+
+.portfolio-app.light-mode .text-gray-200,
+.portfolio-app.light-mode .text-gray-300,
+.portfolio-app.light-mode .text-gray-400 {
+  color: #334155 !important;
+}
+
+.portfolio-app.light-mode .text-gray-500,
+.portfolio-app.light-mode .text-gray-600 {
+  color: #64748b !important;
+}
+
+.portfolio-app.light-mode .text-green-400,
+.portfolio-app.light-mode .text-green-300,
+.portfolio-app.light-mode .section-kicker {
+  color: #1d4ed8 !important;
+}
+
+.portfolio-app.light-mode .bg-white {
+  background-color: #1d4ed8 !important;
+  color: #ffffff !important;
+  box-shadow: 0 12px 30px rgb(29 78 216 / 22%);
+}
+
+.portfolio-app.light-mode .premium-outline-button {
+  color: #0f172a !important;
+  background: rgb(255 255 255 / 76%) !important;
+  border-color: rgb(37 99 235 / 28%) !important;
+}
+
+.portfolio-app.light-mode input,
+.portfolio-app.light-mode textarea,
+.portfolio-app.light-mode select {
+  color: #0f172a !important;
+  background: #ffffff !important;
+  border-color: rgb(37 99 235 / 22%) !important;
+}
+
+.portfolio-app.light-mode input::placeholder,
+.portfolio-app.light-mode textarea::placeholder {
+  color: #64748b !important;
+  opacity: 1;
+}
+
+.portfolio-app.light-mode .premium-nav {
+  background: rgb(255 255 255 / 82%) !important;
+  box-shadow: 0 14px 40px rgb(30 64 175 / 10%);
+  backdrop-filter: blur(18px);
+}
+
+.portfolio-app.light-mode .premium-nav .brand-mark {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 22px rgb(37 99 235 / 24%);
+}
+
+.portfolio-app.light-mode .premium-nav .text-green-500 {
+  color: #93c5fd !important;
+}
+
+.portfolio-app.light-mode .premium-card,
+.portfolio-app.light-mode .premium-project-card > div,
+.portfolio-app.light-mode .contact-panel {
+  background: linear-gradient(145deg, #ffffff, #fbfdff) !important;
+  box-shadow:
+    0 18px 50px rgb(30 64 175 / 8%),
+    inset 0 1px 0 rgb(255 255 255 / 90%);
+}
+
+.portfolio-app.light-mode .premium-card:hover,
+.portfolio-app.light-mode .premium-project-card:hover,
+.portfolio-app.light-mode .skill-pill:hover {
+  box-shadow:
+    0 24px 64px rgb(37 99 235 / 13%);
+  border-color: rgb(37 99 235 / 25%) !important;
+}
+
+.portfolio-app.light-mode .premium-project-card {
+  background: linear-gradient(145deg, rgb(37 99 235 / 18%), rgb(14 165 233 / 8%), rgb(255 255 255 / 90%)) !important;
+}
+
+.portfolio-app.light-mode .premium-contact,
+.portfolio-app.light-mode .premium-section-alt {
+  background:
+    radial-gradient(circle at 92% 10%, rgb(37 99 235 / 7%), transparent 26%),
+    var(--surface) !important;
+}
+
+.portfolio-app.light-mode .premium-section {
+  background: var(--surface) !important;
+}
+
+.portfolio-app.light-mode .premium-section-alt,
+.portfolio-app.light-mode .premium-footer {
+  background: var(--page) !important;
+}
+
+.portfolio-app.light-mode .contact-details-panel {
+  background: #f8fafc;
+}
+
+.portfolio-app.light-mode .hero-console > div:last-child {
+  background: #101828 !important;
+  border-color: rgb(37 99 235 / 22%) !important;
+  box-shadow: 0 32px 80px rgb(30 64 175 / 18%);
+}
+
+.portfolio-app.light-mode .hero-console .text-white {
+  color: #ffffff !important;
+}
+
+.portfolio-app.light-mode .hero-console [class*="text-gray-"] {
+  color: #98a6bd !important;
+}
+
+.portfolio-app.bg-black,
+.portfolio-app .bg-black,
+.portfolio-app [class~="bg-[#050505]"] {
+  background-color: var(--surface) !important;
+}
+
+.portfolio-app .premium-section {
+  background-color: var(--surface) !important;
+}
+
+.portfolio-app .premium-section-alt {
+  background-color: var(--page) !important;
+}
+
+.portfolio-app .bg-white {
+  background-color: var(--accent) !important;
+  color: var(--button-ink) !important;
+}
+
+.portfolio-app [class*="bg-white/"] {
+  background-color: var(--glass) !important;
+}
+
+.portfolio-app [class*="bg-black/"] {
+  background-color: color-mix(in srgb, var(--surface) 91%, transparent) !important;
+}
+
+.portfolio-app .text-white,
+.portfolio-app.text-white {
+  color: var(--ink) !important;
+}
+
+.portfolio-app .text-gray-200 {
+  color: var(--muted) !important;
+}
+
+.portfolio-app .text-gray-300,
+.portfolio-app .text-gray-400 {
+  color: var(--muted) !important;
+}
+
+.portfolio-app .text-gray-500,
+.portfolio-app .text-gray-600 {
+  color: var(--subtle) !important;
+}
+
+.portfolio-app [class*="border-white/"] {
+  border-color: var(--line) !important;
+}
+
+.portfolio-app .text-green-400,
+.portfolio-app .text-green-300 {
+  color: var(--accent) !important;
+}
+
+.portfolio-app .bg-green-400,
+.portfolio-app .bg-green-500 {
+  background-color: var(--accent) !important;
+}
+
+.portfolio-app input,
+.portfolio-app textarea,
+.portfolio-app select {
+  color: var(--ink);
+  background-color: var(--glass);
+}
+
+.portfolio-app input::placeholder,
+.portfolio-app textarea::placeholder {
+  color: var(--subtle);
+}
+
+.hero-section {
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 78% 45%, var(--glow), transparent 34%),
+    linear-gradient(115deg, var(--page), var(--surface));
+}
+
+.hero-grid {
+  z-index: -1;
+  opacity: 0.2;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-position: center center;
+  background-size: 76px 76px;
+  mask-image: linear-gradient(to right, transparent, black 35%, black 85%, transparent);
+}
+
+.hero-title {
+  text-wrap: balance;
+}
+
+.hero-console {
+  animation: profile-float 7s ease-in-out infinite;
+  transform: perspective(1000px) rotateY(-3deg) rotateX(1deg);
+}
+
+.console-glow {
+  background: var(--glow);
+}
+
+.premium-gradient-text {
+  color: var(--accent);
+}
+
+.profile-aura {
+  background: var(--glow);
+}
+
+.profile-frame {
+  border-color: var(--line);
+  background: var(--surface-raised);
+  box-shadow: 0 34px 100px rgb(0 0 0 / 24%);
+}
+
+.profile-flip-card {
+  display: block;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+  perspective: 1400px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.profile-flip-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+}
+
+.profile-flip-card-inner {
+  position: absolute;
+  inset: 0;
+  display: block;
+  transform-style: preserve-3d;
+  transition: transform 850ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.profile-flip-card:hover .profile-flip-card-inner,
+.profile-flip-card.is-flipped .profile-flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.profile-flip-face {
+  display: block;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.profile-flip-back {
+  background:
+    radial-gradient(ellipse at 50% 0%, var(--glow), transparent 60%),
+    var(--surface-raised);
+  transform: rotateY(180deg);
+}
+
+.profile-note {
+  background-color: var(--surface-raised) !important;
+}
+
+.availability-pill,
+.tech-pill,
+.skill-pill,
+.premium-card,
+.premium-project-card > div,
+.contact-panel {
+  border-color: var(--line);
+  box-shadow: 0 18px 55px rgb(0 0 0 / 8%);
+}
+
+.premium-nav {
+  border-color: var(--line);
+  background-color: color-mix(in srgb, var(--page) 84%, transparent) !important;
+}
+
+.premium-nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
+  height: 1px;
+  content: "";
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.premium-nav-link:hover::after,
+.premium-nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.section-kicker {
+  color: var(--accent) !important;
+}
+
+.section-title {
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.premium-section {
+  border-top: 1px solid var(--line);
+}
+
+.premium-card,
+.premium-project-card > div,
+.contact-panel {
+  background-color: var(--surface-raised) !important;
+}
+
+.premium-card:hover,
+.premium-project-card:hover {
+  box-shadow: 0 28px 80px rgb(0 0 0 / 16%);
+}
+
+.premium-contact {
+  background:
+    radial-gradient(ellipse at 92% 80%, var(--glow), transparent 36%),
+    var(--surface) !important;
+}
+
+.contact-details-panel {
+  background-color: var(--page);
+}
+
+.premium-button {
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+.premium-outline-button {
+  border-color: var(--line);
+}
+
+.premium-footer {
+  background-color: var(--page) !important;
+}
+
+[data-reveal] {
+  --reveal-delay: 0ms;
+}
+
+.motion-ready [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition:
+    opacity 650ms ease var(--reveal-delay),
+    transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1) var(--reveal-delay);
+}
+
+.motion-ready [data-reveal].is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.profile-float {
+  animation: profile-float 6s ease-in-out infinite;
+}
+
+.ambient-orb {
+  animation: ambient-drift 12s ease-in-out infinite alternate;
+}
+
+.ambient-orb-delayed {
+  animation-delay: -6s;
+}
+
+@keyframes profile-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes ambient-drift {
+  from {
+    transform: translate3d(-12px, 8px, 0) scale(0.96);
+  }
+
+  to {
+    transform: translate3d(18px, -14px, 0) scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
